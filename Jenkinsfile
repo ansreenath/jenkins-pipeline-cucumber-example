@@ -15,17 +15,20 @@ pipeline{
 
             
             }
-    stage ('Test Stage') {
+		}
+		stage ('Test Stage') {
 
-            steps {
+				steps {
 
-                
-                    sh 'mvn test'
+					
+						sh 'mvn test'
 
-                
+					
 
-            }
+				}
         }
+		
+		
 
 
         stage ('Cucumber Reports') {
@@ -38,6 +41,12 @@ pipeline{
             }
 
         }
+		
+		stage ('Deploy') {
+			steps {
+				echo "Deployed Successfully"
+			}
+		}
 
     }
 
